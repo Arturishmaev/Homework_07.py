@@ -14,6 +14,28 @@
 # **Ввод:** пара-ра-рам рам-пам-папам па-ра-па-да    
 #     **Вывод:** Парам пам-пам  
 
+
+# str = input(("Введите предложение: "))
+# def rhythm(str):
+#     str = str.split()
+#     list_1 = []
+#     for i in str:
+#         result = 0
+#         for j in i:
+#             if i in 'аеёиоуыэюя':
+#                 result += 1
+#         list_1.append(result)
+#     return len(list_1) == list_1.count(list_1[0])
+
+
+# if rhythm(str):
+#     print('Парам пам-пам')
+# else:
+#     print('Пам парам')
+
+
+
+
 # Задача 36: Напишите функцию print_operation_table
 # (operation, num_rows=6, num_columns=6), которая принимает в качестве 
 # аргумента функцию, вычисляющую элемент по номеру строки и столбца. 
@@ -34,3 +56,10 @@
 # 4 8 12 16 20 24
 # 5 10 15 20 25 30
 # 6 12 18 24 30 36
+
+def print_operation_table(operation, num_rows=6, num_columns=6):
+    a = [[operation(i, j) for j in range(1, num_columns + 1)] for i in range(1, num_rows + 1)]
+    for i in a:
+        print(*[f"{x:>3}" for x in i])
+
+print_operation_table(lambda x, y: x * y) # списано
